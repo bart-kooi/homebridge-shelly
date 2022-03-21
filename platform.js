@@ -223,7 +223,7 @@ module.exports = homebridge => {
       const deviceConfig = this.getDeviceConfig(ctx.id)
 
       if (deviceConfig.exclude ||
-          this.accessoryTypeHasChanged(ctx, deviceConfig)) {
+        this.accessoryTypeHasChanged(ctx, deviceConfig)) {
         this.stalePlatformAccessories.add(platformAccessory)
         return
       }
@@ -260,6 +260,7 @@ module.exports = homebridge => {
 
       if (!device) {
         device = shellies.createDevice(ctx.type, ctx.id, ctx.host, ctx.mode)
+        console.log(device);
         shellies.addDevice(device)
       }
 
