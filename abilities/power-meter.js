@@ -45,7 +45,7 @@ module.exports = homebridge => {
       return 240
     }
 
-    _createService() {     
+    _createService() {
       const service = new PowerMeterService()
         .setCharacteristic(ConsumptionCharacteristic, this.consumption)
 
