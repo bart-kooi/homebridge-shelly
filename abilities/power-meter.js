@@ -46,6 +46,10 @@ module.exports = homebridge => {
     }
 
     _createService() {
+      this.log('device', this.device)
+      this.log('power', this._consumptionProperty,
+        'current', this._electricCurrentProperty,
+        'voltage', this._voltageProperty)
       const service = new PowerMeterService()
         .setCharacteristic(ConsumptionCharacteristic, this.consumption)
 
@@ -111,7 +115,7 @@ module.exports = homebridge => {
      * Handles changes from the device to the electric current property.
      */
     _electricCurrentChangeHandler(newValue) {
-      this.log.debug(
+      this.log.info(
         this._electricCurrentProperty,
         'of device',
         this.device.type,
@@ -129,7 +133,7 @@ module.exports = homebridge => {
      * Handles changes from the device to the voltage property.
      */
     _voltageChangeHandler(newValue) {
-      this.log.debug(
+      this.log.info(
         this._voltageProperty,
         'of device',
         this.device.type,
