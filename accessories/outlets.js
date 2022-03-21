@@ -19,7 +19,7 @@ module.exports = homebridge => {
       ))
 
       if (consumptionProperty) {
-        const current = consumptionProperty / 240
+        const current = powerMeterIndex / 240
         this.addPowerMeter(consumptionProperty, current.toString(), '240')
       }
     }

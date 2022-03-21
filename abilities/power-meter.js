@@ -93,7 +93,7 @@ module.exports = homebridge => {
      * Handles changes from the device to the consumption property.
      */
     _consumptionChangeHandler(newValue) {
-      this.log.debug(
+      this.log.info(
         this._consumptionProperty,
         'of device',
         this.device.type,
