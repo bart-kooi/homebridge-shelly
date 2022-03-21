@@ -102,6 +102,12 @@ module.exports = homebridge => {
         newValue
       )
 
+      this.log(
+        'consumption', this.consumption,
+        'current', this.electricCurrent,
+        'voltage', this.voltage
+      )
+
       this.service
         .getCharacteristic(ConsumptionCharacteristic)
         .setValue(this.consumption)
