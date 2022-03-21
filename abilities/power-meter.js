@@ -38,29 +38,25 @@ module.exports = homebridge => {
     }
 
     get electricCurrent() {
-      return this.device[this._electricCurrentProperty]
+      return this.consumption / 240
     }
 
     get voltage() {
-      return this.device[this._voltageProperty]
+      return 240
     }
 
-    _createService() {
-      this.log('device', this.device)
-      this.log('power', this._consumptionProperty,
-        'current', this._electricCurrentProperty,
-        'voltage', this._voltageProperty)
+    _createService() {     
       const service = new PowerMeterService()
         .setCharacteristic(ConsumptionCharacteristic, this.consumption)
 
-      if (this._electricCurrentProperty) {
+      if (this._consumptionProperty) {
         service.setCharacteristic(
           ElectricCurrentCharacteristic,
           this.electricCurrent
         )
       }
 
-      if (this._voltageProperty) {
+      if (this._consumptionProperty) {
         service.setCharacteristic(VoltageCharacteristic, this.voltage)
       }
 
