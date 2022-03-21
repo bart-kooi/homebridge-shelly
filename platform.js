@@ -260,7 +260,7 @@ module.exports = homebridge => {
 
       if (!device) {
         device = shellies.createDevice(ctx.type, ctx.id, ctx.host, ctx.mode)
-        console.log(device);
+        console.log(device)
         shellies.addDevice(device)
       }
 
