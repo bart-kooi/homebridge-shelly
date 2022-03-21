@@ -191,7 +191,7 @@ module.exports = homebridge => {
         this.deviceWrappers.set(device, deviceWrapper)
 
         homebridge.registerPlatformAccessories(
-          'homebridge-shelly',
+          'homebridge-shelly-eve',
           'Shelly',
           deviceWrapper.platformAccessories
         )
@@ -209,7 +209,7 @@ module.exports = homebridge => {
       }
 
       homebridge.unregisterPlatformAccessories(
-        'homebridge-shelly',
+        'homebridge-shelly-eve',
         'Shelly',
         deviceWrapper.platformAccessories
       )
@@ -289,7 +289,7 @@ module.exports = homebridge => {
     handleStalePlatformAccessories() {
       if (this.stalePlatformAccessories.size > 0) {
         homebridge.unregisterPlatformAccessories(
-          'homebridge-shelly',
+          'homebridge-shelly-eve',
           'Shelly',
           Array.from(this.stalePlatformAccessories)
         )
@@ -316,7 +316,7 @@ module.exports = homebridge => {
 
         if (accessory) {
           homebridge.registerPlatformAccessories(
-            'homebridge-shelly',
+            'homebridge-shelly-eve',
             'Shelly',
             [accessory.platformAccessory]
           )

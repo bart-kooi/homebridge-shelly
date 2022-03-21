@@ -44,7 +44,7 @@ const main = async () => {
     await commands.get(command).apply(this, argv)
   } catch (e) {
     if (e.name === 'INVALID_COMMAND') {
-      console.log('homebridge-shelly', packageVersion)
+      console.log('homebridge-shelly-eve', packageVersion)
       console.log('')
       console.log('Valid commands:', Array.from(commands.keys()).join(', '))
     } else {
